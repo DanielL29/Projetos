@@ -1,0 +1,70 @@
+/*---Index---*/
+
+body{
+    background-image: url(../img/agenda.png);
+    background-repeat: no-repeat;
+    background-size:100%;
+}
+
+.row{
+    background-color: #fff;
+    border-radius: 10px; 
+    
+}
+
+h4{
+    padding-top: 10px;
+}
+
+.col-md-4{
+   padding-top: 2%;
+}
+
+.nav-item{
+    text-align: left;
+    padding-left: 15px;
+    font-size: 13px;
+    color: red;
+}
+
+
+/*---Listar---*/
+
+.nav-link.cadastro{
+    color: lightgrey;
+}
+
+.nav-link.cadastro:hover{
+    color: white;
+}
+
+#editar{
+    padding: 0;
+    color: white;
+}
+
+th{
+    color: white;
+}
+
+h3{
+    text-align: left;
+    padding-top: 10px;
+    font-weight: bolder;
+    color: white;
+}
+
+.modal-body, .modal-title{
+    color:black;
+}
+
+.row.listar{
+    background: none;
+    padding-bottom: 10px;
+}
+/*---Editar---*/
+
+
+.edit{
+    padding: 15px;
+}
