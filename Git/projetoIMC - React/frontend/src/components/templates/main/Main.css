@@ -1,0 +1,22 @@
+main.content {
+    background-color: #FBFFF1;
+}
+
+.content-main {
+    padding: 20px;
+    margin: 20px;
+}
+
+.content-main > div {
+    font-weight: 400;
+    font-size: 1.1rem;
+}
+
+.dashboard-cards {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.title i {
+    margin-right: 10px;
+}

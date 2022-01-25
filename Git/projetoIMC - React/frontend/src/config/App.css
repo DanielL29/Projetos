@@ -1,0 +1,36 @@
+* {
+    box-sizing: border-box;
+}
+
+.app {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 40px 1fr 30px;
+    grid-template-areas: 
+        'header header'
+        'aside content'
+        'aside footer';
+
+    height: 100vh;
+}
+
+.app.active {
+    grid-template-columns: 55px 1fr;
+}
+
+header.header {
+    grid-area: header;
+}
+
+aside.aside {
+    grid-area: aside;
+}
+
+main.content {
+    grid-area: content;
+}
+
+footer.footer {
+    grid-area: footer;
+}

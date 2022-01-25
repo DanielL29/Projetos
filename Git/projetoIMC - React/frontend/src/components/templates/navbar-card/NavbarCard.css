@@ -1,0 +1,39 @@
+.section {
+    display: flex;
+    align-items: center;
+
+    border-left: 1px solid #C1BDB3;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 5px 8px 2px rgba(0, 0, 0, 0.25);
+    transition: 0.5s;
+}
+
+.section:hover {
+    background-color: #25283D; /* rgb(104, 101, 101) */
+    border-bottom: 1px solid #C1BDB3;
+}
+
+.link {
+    text-decoration: none;
+    color: #fff;
+}
+
+.link:hover {
+    color: #fff;
+}
+
+/*------ Active -------*/
+
+.aside.active {
+    padding: 0;
+    transition: all 0.5s ease;
+}
+
+.section.active {
+    margin-top: 5px;
+    height: 50px;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
