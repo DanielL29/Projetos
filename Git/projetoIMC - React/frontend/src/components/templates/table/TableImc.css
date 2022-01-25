@@ -1,0 +1,11 @@
+.table-dark thead {
+    background-color: #212529;
+}
+
+.table-dark th {
+    padding: 8px;
+}
+
+.table-dark {
+    border: 1px solid #444;
+}
