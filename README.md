@@ -7,6 +7,6 @@ Alguns projetos cruds nos frameworks laravel e angular.
 
 -----Javascript(Angular e React)-----
 
-#rodar o npm i para as dependencias e instalar a pasta node_modules ,
+#rodar o npm i para as dependencias e instalar a pasta node_modules 
 
 #rodar o comando npm start na pasta backend e frontend
