@@ -20,8 +20,7 @@ class AdminUsers extends Component {
     }
 
     clear() {
-        this.setState({ user: baseState.user })
-        this.setState({ form: baseState.form = false })
+        this.setState({ user: baseState.user, form: baseState.form = false })
     }
 
     update() {
