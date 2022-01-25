@@ -3,7 +3,7 @@ Alguns projetos cruds nos frameworks laravel e angular.
 
 -----Laravel-----
 
-#rodar os comandos php artisan serve e php artisan migrate
+#rodar os comandos php artisan migrate e php artisan serve
 
 -----Javascript(Angular e React)-----
 
