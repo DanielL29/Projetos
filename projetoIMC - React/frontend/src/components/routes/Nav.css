@@ -1,0 +1,17 @@
+aside.aside {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    background-color: #343753;
+    padding: 10px;
+    transition: 0.5s;
+    overflow: hidden;
+}
+
+.menu {
+    color: #fff;
+    font-size: 1.3rem;
+    font-weight: 100;
+    width: 100%;
+}

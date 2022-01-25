@@ -1,0 +1,26 @@
+.dashboard-card {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 1px solid rgba(200, 200, 200, 0.2);
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.15);
+}
+
+.dashboard-card h3 {
+    color: #fff;
+}
+
+.dashboard-card p {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 200;
+}
+
+.dashboard-card hr {
+    color: #fff;
+}
+
