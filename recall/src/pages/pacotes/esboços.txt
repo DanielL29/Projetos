@@ -1,0 +1,31 @@
+// function estruturarPacotes() {
+    //     const arrayCategoriaNome = categorias.map(categoria => categoria.categoria)
+    //     var pacotesFinal = {}
+    //     for(let i = 0; i < arrayCategoriaNome.length; i++) {
+    //         pacotesFinal[arrayCategoriaNome[i]] = []
+    //     }
+    //     const pacotesOrdenados = pacotes.map(pacote => {
+    //         return (
+    //             `{ "id": "${
+    //             pacote.id}", "idCategoria": "${
+    //             pacote.idCategoria}", "nomeCategoria": "${
+    //             pacote.nomeCategoria}", "pergunta": "${
+    //             pacote.pergunta}", "resposta": "${
+    //             pacote.resposta}", "revelada": "${
+    //             pacote.respostaRevelada}" }`   
+    //         )
+    //     })
+
+    //     const converterParaObjeto = item => JSON.parse(item)
+    //     const pacotesObjeto = pacotesOrdenados.map(converterParaObjeto)
+
+    //     Object.keys(pacotesFinal).map(key => {
+    //         for(let j = 0; j < pacotesObjeto.length; j++) {
+    //             if(key === pacotesObjeto[j].nomeCategoria) {
+    //                 pacotesFinal[key].push(pacotesObjeto[j])
+    //             }
+    //         }
+    //     })
+
+    //     setPacotesFinalObject(pacotesFinal)
+    // }
