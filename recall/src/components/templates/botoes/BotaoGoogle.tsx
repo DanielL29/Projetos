@@ -14,7 +14,7 @@ export default function BotaoGoogle(props: BotaoGoogleProps) {
             <img 
                 src='/images/google.png' 
                 alt='Icone Google'
-                className='h-6 w-6 mr-2' 
+                className='h-6 w-6 mr-2 select-none' 
             />
             <span>Entrar com Google</span>
         </button>

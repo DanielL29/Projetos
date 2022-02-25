@@ -31,11 +31,11 @@ export default function Perfil() {
             <Layout titulo="Perfil do Usuario" 
                 subtitulo="Informações e dados sobre o usuario">
                 {console.log(usuario)}
-                <div className="w-2/5 bg-gray-300 dark:bg-gray-500 rounded-md">
-                    <div className="flex">
+                <div className="xl:w-2/5 lg:w-2/4 md:w-3/4 w-full bg-gray-300 dark:bg-gray-500 rounded-md">
+                    <div className="flex flex-wrap md:flex-nowrap">
                         <div className="flex flex-col justify-end items-center h-40 w-40 p-3">
                             <img src={usuario?.photoURL ?? "/images/avatarPadrao.svg"} alt="Imagem do Perfil" 
-                                className="rounded-full h-40 w-40 object-cover" />
+                                className="rounded-full w-full object-cover select-none" />
                             <div data-tip="Editar Perfil" className={`
                                 flex justify-center items-center 
                                 bg-cyan-500 dark:bg-cyan-800 rounded-full h-8 w-8 absolute mr-20
@@ -51,7 +51,8 @@ export default function Perfil() {
                         `}>
                             {editando ? (
                                 <div>
-                                    <Label label="Edite os campos que deseja alterar (1 ou mais)" border="border-gray-500 dark:border-gray-700" labelColor="text-gray-700 font-bold" />
+                                    <Label label="Edite os campos que deseja alterar (1 ou mais)" border="border-gray-500 dark:border-gray-300" 
+                                        labelColor="text-gray-500 dark:text-gray-300 font-bold" />
 
                                     <InputAltUsuario label="Novo Nome do Usuario:" valor={nome} onChange={(e) => setNome(e.target.value)} />
                                     <InputAltUsuario label="Nova Foto do Perfil(Url):" valor={imagemUrl} onChange={(e) => setImagemUrl(e.target.value)} />
@@ -69,15 +70,15 @@ export default function Perfil() {
                                 <div>
                                     <div className="flex">
                                         <Label label="Nome do Usuario: " border="border-gray-500 dark:border-gray-300" labelColor="text-gray-500 dark:text-gray-300" />
-                                        <span className="ml-2 text-gray-700">{usuario?.displayName ?? '(Usuario sem nome)'}</span>
+                                        <span className="ml-2 text-gray-700 dark:text-gray-100">{usuario?.displayName ?? '(Usuario sem nome)'}</span>
                                     </div>
                                     <div className="flex">
                                         <Label label="Email do Usuario: " border="border-gray-500 dark:border-gray-300" labelColor="text-gray-500 dark:text-gray-300" />
-                                        <span className="ml-2 text-gray-700">{usuario?.email}</span>
+                                        <span className="ml-2 text-gray-700 dark:text-gray-100">{usuario?.email}</span>
                                     </div>
                                     <div className="flex">
                                         <Label label="Provedor: " border="border-gray-500 dark:border-gray-300" labelColor="text-gray-500 dark:text-gray-300" />
-                                        <span className="ml-2 text-gray-700">{usuario?.providerId}</span>
+                                        <span className="ml-2 text-gray-700 dark:text-gray-100">{usuario?.providerId}</span>
                                     </div>
                                     {usuario?.providerId === 'google.com' ? '' : (
                                         <a onClick={() => trocarSenha(usuario.email)} 

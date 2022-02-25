@@ -10,7 +10,7 @@ export default function AvatarUsuario() {
                 <img 
                     src={usuario?.photoURL ?? "/images/avatarPadrao.svg"} 
                     alt="Icone Avatar"
-                    className="h-10 w-10 ml-4 rounded-full cursor-pointer object-cover" />
+                    className="h-10 w-10 ml-4 rounded-full cursor-pointer object-cover select-none" />
             </Link>
         </div>
     )

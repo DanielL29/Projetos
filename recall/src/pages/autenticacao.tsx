@@ -46,7 +46,7 @@ export default function Autenticacao() {
                         h-12 w-12 rounded-full 
                         bg-cyan-500
                     `}>
-                        <Logo className="h-8 w-8"/>
+                        <Logo className="h-8 w-8 select-none"/>
                     </div>
                     <span className='font-bold text-cyan-500 text-3xl p-5'>Bem vindo ao Recall!</span>
                 </div>

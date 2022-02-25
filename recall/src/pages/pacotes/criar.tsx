@@ -45,21 +45,23 @@ export default function CriarPacote() {
             <Layout titulo="Criar Pacote de Estudo" 
                 subtitulo="Crie seu pacote de estudo e começe a treinar!">
                     <div className="w-full md:w-3/4 lg:w-2/4">
-                        <CategoriaForm label="Crie uma Nova Categoria" labelColor="text-white"border="border-gray-100"
+                        <CategoriaForm label="Crie uma Nova Categoria" labelColor="text-gray-500 dark:text-white"border="border-gray-400 dark:border-gray-300"
                             valor={categoria} categorias={categorias} placeholder="Criar Categoria" 
                             onClick={() => criarCategoria(new CategoriaModel(categoria, usuario?.uid ,id))} onChange={setCategoria}
                             camposCategorias={camposDaCategoria} textoBotao="Criar" 
                         />
-                        <Textarea label="Card Pergunta" labelColor="font-light" border="border-gray-300"
-                            placeholder="Pergunta..." valor={pergunta} onChange={setPergunta} />
-                        <Textarea label="Card Resposta" labelColor="font-light" border="border-gray-300"
-                            placeholder="Resposta..." valor={resposta} onChange={setResposta} />
-                        <div className="flex flex-col justify-end items-end ">
-                            <Botao textoBotao="Criar Pacote" 
-                                onClick={() => criarPacote(
-                                    new PacoteModel(pergunta, resposta, false, nomeCategoria, usuario?.uid, idPacote)
-                                )} 
-                            />
+                        <div className="bg-gray-300 dark:bg-gray-500 p-5 mt-5 rounded-lg">
+                            <Textarea label="Card Pergunta" labelColor="text-gray-500 dark:text-white" border="border-gray-400 dark:border-gray-300"
+                                placeholder="Pergunta..." valor={pergunta} onChange={setPergunta} />
+                            <Textarea label="Card Resposta" labelColor="text-gray-500 dark:text-white" border="border-gray-400 dark:border-gray-300"
+                                placeholder="Resposta..." valor={resposta} onChange={setResposta} />
+                            <div className="flex flex-col justify-end items-end ">
+                                <Botao textoBotao="Criar Pacote" 
+                                    onClick={() => criarPacote(
+                                        new PacoteModel(pergunta, resposta, false, nomeCategoria, usuario?.uid, idPacote)
+                                    )} 
+                                />
+                            </div>
                         </div>
                     </div>
             </Layout>          

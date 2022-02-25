@@ -8,7 +8,7 @@ export default function RecallBanner() {
             h-screen w-full
             bg-cyan-500
         `}>
-            <Logo className='h-36 w-36' />
+            <Logo className='h-36 w-36 select-none' />
             <span className='font-bold text-white text-3xl p-5'>Bem vindo ao Recall!</span>
         </div>
     )

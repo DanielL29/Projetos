@@ -15,10 +15,10 @@ export default function Layout(props: LayoutProps) {
 
     return (
         <ForcarAuth>
-            <div className={`${tema} flex h-screen w-screen`}>
+            <div className={`${tema} flex h-screen`}>
                 <Menu />
                 <div className={`
-                    flex flex-col w-full
+                    flex flex-col w-full ml-20
                     bg-gray-100 dark:bg-gray-700
                 `}>
                     <Cabecalho />

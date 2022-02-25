@@ -14,7 +14,7 @@ export default function Home() {
                   bg-cyan-500 z-10 
                   dark:bg-cyan-800
                 `}>
-                  <Logo className="h-8 w-8"/>
+                  <Logo className="h-8 w-8 select-none"/>
                 </div>
                 <div className={`
                   bg-cyan-500 relative

@@ -2,12 +2,12 @@ import { IconeAjuda, IconeGerenciar, IconeHome, IconePacote, IconeSair, IconeUsu
 import MenuItem from "./MenuItem";
 import useAuth from '../../../docs/hook/useAuth';
 
-export default function Menu(props) {
+export default function Menu() {
     const { logout } = useAuth()
 
     return (
         <aside className={`
-            flex flex-col h-screen
+            flex flex-col h-screen fixed
             bg-gray-200 text-gray-700
             dark:bg-gray-800 dark:text-gray-200
         `}>

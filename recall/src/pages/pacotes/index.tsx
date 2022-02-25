@@ -81,7 +81,7 @@ export default function Pacotes() {
 				<CardPergunta key={perguntasFiltradas[indice].id} pergunta={perguntasFiltradas[indice].pergunta} 
 					resposta={perguntasFiltradas[indice].resposta} revelada={revelada} />
 			)
-		} else return 'Cadastre alguma pergunta!'
+		} else return 'Nenhuma pergunta cadastrada nesta categoria!'
 	}
 
 	return (
@@ -98,8 +98,16 @@ export default function Pacotes() {
 								<Botao textoBotao="Proxima Pergunta" className="mt-5 rounded-3xl" 
 									onClick={() => incrementarIndice(indice)} />
 							) : (
-								<Botao textoBotao="Voltar" onClick={() => setEstudando(false)} 
-									className="bg-gray-500 hover:bg-gray-400 mt-5 rounded-3xl" />
+								<div className="flex flex-col justify-center items-center">
+									<Link href='/pacotes/criar'>
+										<Botao className="flex rounded-3xl mt-5">
+											{IconeMais}
+											<span className="ml-1">Cadastrar Pergunta</span> 
+										</Botao>
+									</Link>
+									<Botao textoBotao="Voltar" onClick={() => setEstudando(false)} 
+										className="bg-gray-500 hover:bg-gray-400 mt-5 rounded-3xl" />
+								</div>
 							)}
 						</div>
 					</div>
