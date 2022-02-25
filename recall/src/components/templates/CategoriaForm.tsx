@@ -47,8 +47,10 @@ export default function CategoriaForm(props: CategoriaFormProps) {
                     `}  
                 />
                 <div>
-                    <Botao textoBotao={props.textoBotao} 
-                        onClick={() => props.onClick()}/>
+                    <Botao textoBotao={props.textoBotao} onClick={() => props.onClick()} className={`
+                        bg-cyan-500 hover:bg-cyan-400 
+                        dark:bg-cyan-800 dark:hover:bg-cyan-700
+                    `}/>
                 </div>
             </div>
             <div>

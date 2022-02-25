@@ -58,7 +58,7 @@ export default function Perfil() {
                                     <InputAltUsuario label="Nova Foto do Perfil(Url):" valor={imagemUrl} onChange={(e) => setImagemUrl(e.target.value)} />
                                     {usuario?.providerId === 'google.com' ? '' : <InputAltUsuario label="Novo Email do Usuario:" valor={email} onChange={(e) => setEmail(e.target.value)} />} 
                                     <div className="flex justify-end">
-                                        <Botao textoBotao="Atualizar Usuario" 
+                                        <Botao textoBotao="Atualizar Usuario" className="bg-cyan-500 hover:bg-cyan-400 dark:bg-cyan-800 dark:hover:bg-cyan-700"
                                             onClick={() => atualizarCamposUsuario(
                                                 nome !== '' ? nome : usuario.displayName, 
                                                 imagemUrl !== '' ? imagemUrl : usuario.photoURL,

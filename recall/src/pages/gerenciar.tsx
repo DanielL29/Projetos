@@ -86,20 +86,20 @@ export default function Gerenciar() {
     function renderizarPacoteSelecionado() {
         return (
             <div className="w-2/4">
-                <div className="text-gray-500 font-semibold text-lg mb-5">{excluir ? 'Excluir Card ?' : 'Edite os campos que deseja alterar (1 ou mais)'}</div>
+                <div className="text-gray-500 dark:text-gray-100 font-semibold text-lg mb-5">{excluir ? 'Excluir Card ?' : 'Edite os campos que deseja alterar (1 ou mais)'}</div>
                 <Textarea label="Nova Pergunta" labelColor="text-gray-500 dark:text-gray-200" desabilitado={excluir}
                     border="border-gray-500" valor={excluir ? pacote.pergunta : pergunta} onChange={setPergunta}/>
                 <Textarea label="Nova Resposta" labelColor="text-gray-500 dark:text-gray-200" desabilitado={excluir}
                     border="border-gray-500" valor={excluir ? pacote.resposta : resposta} onChange={setResposta}/>
 
                 <div className="flex justify-end">
-                    <Botao textoBotao="Voltar" className="bg-slate-500 hover:bg-slate-400 dark:bg-slate-500 dark:hover:bg-slate-400" 
+                    <Botao textoBotao="Voltar" className="bg-slate-500 hover:bg-slate-400" 
                         onClick={() => setSelecionado(false)} />
                     {excluir ? (
                         <Botao textoBotao="Excluir" className="bg-red-500 hover:bg-red-400 dark:bg-red-500 dark:hover:bg-red-400"
                             onClick={() => excluirPacote(pacote)} />
                     ) : (
-                        <Botao textoBotao="Atualizar" 
+                        <Botao textoBotao="Atualizar" className="bg-cyan-500 hover:bg-cyan-400 dark:bg-cyan-800 dark:hover:bg-cyan-700"
                             onClick={() => criarPacote(
                                 new PacoteModel(pergunta !== '' ? pergunta : pacote.pergunta, resposta !== '' ? resposta : pacote.resposta, 
                                     false, pacote.nomeCategoria, usuario?.uid, pacote.id)

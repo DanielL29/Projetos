@@ -95,12 +95,18 @@ export default function Pacotes() {
 						</div>
 						<div>
 							{perguntasFiltradas.length > 0 ? (
-								<Botao textoBotao="Proxima Pergunta" className="mt-5 rounded-3xl" 
-									onClick={() => incrementarIndice(indice)} />
+								<Botao textoBotao="Proxima Pergunta" onClick={() => incrementarIndice(indice)} className={`
+									mt-5 rounded-3xl bg-cyan-500 hover:bg-cyan-400 
+									dark:bg-cyan-800 dark:hover:bg-cyan-700
+								`}/>
 							) : (
 								<div className="flex flex-col justify-center items-center">
 									<Link href='/pacotes/criar'>
-										<Botao className="flex rounded-3xl mt-5">
+										<Botao className={`
+											flex rounded-3xl mt-5 
+											bg-cyan-500 hover:bg-cyan-400 
+											dark:bg-cyan-800 dark:hover:bg-cyan-700
+										`}>
 											{IconeMais}
 											<span className="ml-1">Cadastrar Pergunta</span> 
 										</Botao>
@@ -114,7 +120,11 @@ export default function Pacotes() {
 				) : (
 					<>
 						<Link href='/pacotes/criar'>
-							<Botao className="flex rounded-3xl">
+							<Botao className={`
+								flex rounded-3xl 
+								bg-cyan-500 hover:bg-cyan-400 
+								dark:bg-cyan-800 dark:hover:bg-cyan-700
+							`}>
 								{IconeMais}
 								<span className="ml-1">Criar Pacote</span> 
 							</Botao>

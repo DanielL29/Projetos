@@ -56,7 +56,7 @@ export default function CriarPacote() {
                             <Textarea label="Card Resposta" labelColor="text-gray-500 dark:text-white" border="border-gray-400 dark:border-gray-300"
                                 placeholder="Resposta..." valor={resposta} onChange={setResposta} />
                             <div className="flex flex-col justify-end items-end ">
-                                <Botao textoBotao="Criar Pacote" 
+                                <Botao textoBotao="Criar Pacote" className="bg-cyan-500 hover:bg-cyan-400 dark:bg-cyan-800 dark:hover:bg-cyan-700 mt-2 m-0"
                                     onClick={() => criarPacote(
                                         new PacoteModel(pergunta, resposta, false, nomeCategoria, usuario?.uid, idPacote)
                                     )} 
