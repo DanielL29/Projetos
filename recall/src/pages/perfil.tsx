@@ -30,7 +30,7 @@ export default function Perfil() {
         <div>
             <Layout titulo="Perfil do Usuario" 
                 subtitulo="Informações e dados sobre o usuario">
-                {console.log(usuario)}
+                {/* {console.log(usuario)} */}
                 <div className="xl:w-2/5 lg:w-2/4 md:w-3/4 w-full bg-gray-300 dark:bg-gray-500 rounded-md">
                     <div className="flex flex-wrap md:flex-nowrap">
                         <div className="flex flex-col justify-end items-center h-40 w-40 p-3">

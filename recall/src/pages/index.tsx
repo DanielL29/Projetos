@@ -1,3 +1,4 @@
+import Head from "next/head";
 import Layout from "../components/templates/layout/Layout";
 import Logo from "../components/templates/layout/Logo";
 

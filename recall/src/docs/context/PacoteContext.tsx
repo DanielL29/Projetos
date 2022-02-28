@@ -20,6 +20,7 @@ export function PacoteProvider(props) {
                 pergunta: pacote.pergunta,
                 resposta: pacote.resposta,
                 respostaRevelada: pacote.respostaRevelada,
+                desempenho: pacote.desempenho,
                 nomeCategoria: pacote.nomeCategoria,
                 idUsuarioAtual: pacote.idUsuarioAtual,
             }
@@ -31,6 +32,7 @@ export function PacoteProvider(props) {
                     dados.pergunta, 
                     dados.resposta, 
                     dados.respostaRevelada, 
+                    dados.desempenho,
                     dados.nomeCategoria,
                     dados.idUsuarioAtual,
                     snapshot.id
@@ -44,7 +46,6 @@ export function PacoteProvider(props) {
                 await setDoc(doc(db, 'pacote', pacote.id)
                     .withConverter(conversor), pacote)
 
-                document.location.reload()
                 return pacote
             } else {
                 await addDoc(collection(db, 'pacote')

@@ -73,7 +73,7 @@ export default function Autenticacao() {
                 <AuthInput label='Senha' valor={senha} tipo='password'
                     valorMudou={setSenha} obrigatorio />
 
-                <Botao className='w-full mt-6' onClick={submeter}>
+                <Botao className='w-full mt-6 bg-cyan-500 hover:bg-cyan-400' onClick={submeter}>
                     {modo === 'login' ? 'Entrar' : 'Cadastrar'}
                 </Botao>
 

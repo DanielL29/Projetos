@@ -3,24 +3,26 @@ export default class PacoteModel {
     #pergunta: string
     #resposta: string
     #respostaRevelada: boolean
-    #idUsuarioAtual: string
+    #desempenho: number
     #nomeCategoria: string
+    #idUsuarioAtual: string
     salvarPacote: (pacote: PacoteModel) => Promise<PacoteModel>
     excluir: (pacote: PacoteModel) => Promise<void>
     obterPacotes: () => Promise<PacoteModel[]>
 
-    constructor(pergunta: string, resposta: string, respostaRevelada: false, nomeCategoria: string,
+    constructor(pergunta: string, resposta: string, respostaRevelada: false, desempenho: number, nomeCategoria: string,
         idUsuarioAtual: string = null, id: string = null) {
         this.#id = id
         this.#pergunta = pergunta
         this.#resposta = resposta
         this.#respostaRevelada = respostaRevelada
+        this.#desempenho = desempenho
         this.#nomeCategoria = nomeCategoria
         this.#idUsuarioAtual = idUsuarioAtual
     }
 
     static padrao() {
-        return new PacoteModel('', '', false, '')
+        return new PacoteModel('', '', false, 0, '')
     }
 
     get id() {
@@ -39,12 +41,16 @@ export default class PacoteModel {
         return this.#respostaRevelada
     }
 
-    get idUsuarioAtual() {
-        return this.#idUsuarioAtual
+    get desempenho() {
+        return this.#desempenho
     }
 
     get nomeCategoria() {
         return this.#nomeCategoria
+    }
+
+    get idUsuarioAtual() {
+        return this.#idUsuarioAtual
     }
 }
 

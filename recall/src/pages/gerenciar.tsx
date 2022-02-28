@@ -9,6 +9,8 @@ import useCategoria, { useCategoriaContext } from "../docs/hook/useCategoria";
 import usePacote, { usePacoteContext } from "../docs/hook/usePacote";
 import CategoriaModel from "../model/Categoria";
 import PacoteModel from "../model/Pacote";
+import { ToastContainer, toast } from 'react-toastify';
+import { IconeMais } from "../components/icons/Icones";
 
 export default function Gerenciar() {
     const { usuario } = useAuth()
@@ -53,19 +55,38 @@ export default function Gerenciar() {
         setExcluir(excluir)
     }
 
+    async function atualizarPacote() {
+        await criarPacote(new PacoteModel(pergunta !== '' ? pergunta : pacote.pergunta, resposta !== '' ? resposta : pacote.resposta, 
+            false, pacote.desempenho, pacote.nomeCategoria, usuario?.uid, pacote.id))
+
+        document.location.reload()
+    }
+
     function filtrarPacotes(categoria?: any, mostrar = false) {
         const filtrados = pacotes.map(pacote => categoria === pacote.nomeCategoria 
             && pacote.idUsuarioAtual === usuario?.uid ? pacote : '')
             .filter(pacote => pacote !== '')
+        
         setFiltrados(filtrados)
         setMostrar(mostrar)
+            
+        const obterDesempenhos = pacote => pacote.desempenho
+        const desempenhosFiltrados = filtrados.length === 0 ? toast('Cadastre alguma pergunta!') : filtrados.map(obterDesempenhos).reduce((atual, prox) => atual + prox)
+
+        if(desempenhosFiltrados === (filtrados.length * 2)) {
+            return toast.success(`Estudos de ${categoria} em dia!`)
+        } else if(desempenhosFiltrados < (filtrados.length * 2) && desempenhosFiltrados > 0) {
+            return toast.info(`Dê uma olhada em ${categoria} novamente.`)
+        } else if(desempenhosFiltrados === 0) {
+            return toast.warning(`Estude mais ${categoria} urgente!`)
+        }
     }
 
     function renderizarTabela() {
         return filtrados.map(pacote => {
             return (
-                <TabelaPacotes key={pacote.id} pergunta={pacote.pergunta} resposta={pacote.resposta} 
-                    editarPacote={() => selecionarPacote(pacote, true)} excluirPacote={() => selecionarPacote(pacote, true, true)} />
+                    <TabelaPacotes key={pacote.id} pergunta={pacote.pergunta} resposta={pacote.resposta} 
+                        editarPacote={() => selecionarPacote(pacote, true)} excluirPacote={() => selecionarPacote(pacote, true, true)} />
             ) 
         })
     }
@@ -100,10 +121,7 @@ export default function Gerenciar() {
                             onClick={() => excluirPacote(pacote)} />
                     ) : (
                         <Botao textoBotao="Atualizar" className="bg-cyan-500 hover:bg-cyan-400 dark:bg-cyan-800 dark:hover:bg-cyan-700"
-                            onClick={() => criarPacote(
-                                new PacoteModel(pergunta !== '' ? pergunta : pacote.pergunta, resposta !== '' ? resposta : pacote.resposta, 
-                                    false, pacote.nomeCategoria, usuario?.uid, pacote.id)
-                            )} 
+                            onClick={() => atualizarPacote()} 
                         />
                     )}
                 </div>
@@ -120,13 +138,18 @@ export default function Gerenciar() {
                         {renderizarPacoteSelecionado()}
                     </div>
                 ) : (
-                     <div className={`
-                        flex flex-col justify-center 
-                        rounded-lg w-2/4 
-                        bg-gradient-to-r from-cyan-600 to-cyan-400
-                        dark:bg-gradient-to-r dark:from-cyan-800 dark:to-cyan-600
-                    `}>
-                        {renderizarCategoriasDropdown()}
+                    <div>
+                        <div className={`
+                            flex flex-col justify-center 
+                            rounded-lg w-2/4 
+                            bg-gradient-to-r from-cyan-600 to-cyan-400
+                            dark:bg-gradient-to-r dark:from-cyan-800 dark:to-cyan-600
+                        `}>
+                            {renderizarCategoriasDropdown()}
+                            <ToastContainer theme="colored" bodyClassName={filtrados.length === 0 ? "text-gray-500" : "text-white font-bold"} position="top-right"
+                                autoClose={5000} hideProgressBar newestOnTop={false} draggable icon={filtrados.length === 0 ? IconeMais : true}
+                                closeOnClick rtl={false} pauseOnFocusLoss pauseOnHover />
+                        </div>
                     </div>
                 )} 
             </Layout>

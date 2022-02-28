@@ -21,10 +21,10 @@ export default function TabelaPacotes(props: TabelaPacotesProps) {
                 bg-gray-200 dark:bg-gray-600
             `}>
                 <tr>
-                    <td className={`${tdStyle} w-2/4`}>{props.pergunta}</td>
-                    <td className={`${tdStyle} w-2/4`}>{props.resposta}</td>
-                    <td className={`${tdStyle}`}>
-                        <div className="flex">
+                    <td className={`${tdStyle} w-2/5`}>{props.pergunta}</td>
+                    <td className={`${tdStyle} w-2/5`}>{props.resposta}</td>
+                    <td className={`${tdStyle} w-1/5`}>
+                        <div className="flex justify-center">
                             <button onClick={props.editarPacote} className={`
                                 flex justify-center items-center
                                 text-yellow-600 rounded-full p-2 m-1

@@ -10,7 +10,7 @@ export default function CardPergunta(props: CardPerguntaProps) {
             flex flex-col justify-center items-center flex-wrap
             bg-cyan-500 dark:bg-cyan-800 cursor-pointer
             h-40 w-80 p-2 my-5 rounded-lg
-            shadow-xl shadow-gray-400 dark:shadow-gray-600 
+            shadow-xl shadow-gray-400 dark:shadow-gray-800 
             transition-transform duration-700
             scale-110
         `}>

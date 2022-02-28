@@ -19,6 +19,7 @@ export default function CriarPacote() {
     const idPacote = ''
     const [pergunta, setPergunta] = useState('')
     const [resposta, setResposta] = useState('')
+    const [desempenho, setDesempenho] = useState(0)
     const [nomeCategoria, setNomeCategoria] = useState('')
 
     const { criarCategoria } = useCategoria()
@@ -58,7 +59,7 @@ export default function CriarPacote() {
                             <div className="flex flex-col justify-end items-end ">
                                 <Botao textoBotao="Criar Pacote" className="bg-cyan-500 hover:bg-cyan-400 dark:bg-cyan-800 dark:hover:bg-cyan-700 mt-2 m-0"
                                     onClick={() => criarPacote(
-                                        new PacoteModel(pergunta, resposta, false, nomeCategoria, usuario?.uid, idPacote)
+                                        new PacoteModel(pergunta, resposta, false, desempenho, nomeCategoria, usuario?.uid, idPacote)
                                     )} 
                                 />
                             </div>

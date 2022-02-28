@@ -1,3 +1,4 @@
+import Head from "next/head";
 import useTema from "../../../docs/hook/useTema";
 import ForcarAuth from "../../auth/ForcarAuth";
 import Cabecalho from "./Cabecalho";
@@ -15,6 +16,10 @@ export default function Layout(props: LayoutProps) {
 
     return (
         <ForcarAuth>
+            <Head>
+                <title>Recall</title>
+                <link rel="icon" href="/recall-logo-aba.png" />
+            </Head>
             <div className={`${tema} flex h-screen`}>
                 <Menu />
                 <div className={`
