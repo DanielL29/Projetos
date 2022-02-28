@@ -8,17 +8,15 @@ import Botao from "../components/templates/botoes/Botao";
 import InputAltUsuario from "../components/templates/InputAltUsuario";
 
 export default function Perfil() {
-    const { usuario, atualizarUsuario, trocarSenha, trocarEmail } = useAuth()
+    const { usuario, atualizarUsuario, trocarSenha } = useAuth()
 
     const [editando, setEditando] = useState(false)
     const [nome, setNome] = useState('')
     const [imagemUrl, setImagemUrl] = useState('')
-    const [email, setEmail] = useState('')
 
-    async function atualizarCamposUsuario(nome, imagemUrl, email) {
+    async function atualizarCamposUsuario(nome, imagemUrl) {
         try {
             await atualizarUsuario(nome, imagemUrl)
-            await trocarEmail(email)
             console.log('Usuario Atualizado!')
             document.location.reload()
         } catch(e) {
@@ -35,7 +33,7 @@ export default function Perfil() {
                     <div className="flex flex-wrap md:flex-nowrap">
                         <div className="flex flex-col justify-end items-center h-40 w-40 p-3">
                             <img src={usuario?.photoURL ?? "/images/avatarPadrao.svg"} alt="Imagem do Perfil" 
-                                className="rounded-full w-full object-cover select-none" />
+                                className="rounded-full w-full h-full object-cover select-none" />
                             <div data-tip="Editar Perfil" className={`
                                 flex justify-center items-center 
                                 bg-cyan-500 dark:bg-cyan-800 rounded-full h-8 w-8 absolute mr-20
@@ -53,16 +51,13 @@ export default function Perfil() {
                                 <div>
                                     <Label label="Edite os campos que deseja alterar (1 ou mais)" border="border-gray-500 dark:border-gray-300" 
                                         labelColor="text-gray-500 dark:text-gray-300 font-bold" />
-
                                     <InputAltUsuario label="Novo Nome do Usuario:" valor={nome} onChange={(e) => setNome(e.target.value)} />
                                     <InputAltUsuario label="Nova Foto do Perfil(Url):" valor={imagemUrl} onChange={(e) => setImagemUrl(e.target.value)} />
-                                    {usuario?.providerId === 'google.com' ? '' : <InputAltUsuario label="Novo Email do Usuario:" valor={email} onChange={(e) => setEmail(e.target.value)} />} 
                                     <div className="flex justify-end">
                                         <Botao textoBotao="Atualizar Usuario" className="bg-cyan-500 hover:bg-cyan-400 dark:bg-cyan-800 dark:hover:bg-cyan-700"
                                             onClick={() => atualizarCamposUsuario(
-                                                nome !== '' ? nome : usuario.displayName, 
-                                                imagemUrl !== '' ? imagemUrl : usuario.photoURL,
-                                                email !== '' ? email : usuario.email
+                                                nome !== '' ? nome : usuario?.displayName, 
+                                                imagemUrl !== '' ? imagemUrl : usuario?.photoURL,
                                             )} />  
                                     </div>
                                 </div>

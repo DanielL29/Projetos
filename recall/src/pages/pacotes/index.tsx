@@ -36,7 +36,7 @@ export default function Pacotes() {
 	useEffect(() => {
 		obterTodosPacotes()
         obterTodasCategorias()
-    }, [desempenho, indice, resultado, estudando, revelada])
+    }, [desempenho, indice, resultado, estudando, emojiFeliz, emojiNormal, emojiTriste])
 
 	function obterTodasCategorias() {
         obterCategorias().then(categorias => {
