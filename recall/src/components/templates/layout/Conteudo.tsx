@@ -8,7 +8,7 @@ interface ConteudoProps {
 
 export default function Conteudo(props: ConteudoProps) {
     return (
-        <main className="flex flex-col p-5 bg-gray-100 dark:bg-gray-700">
+        <main className="flex flex-col p-5 bg-gray-100 dark:bg-gray-700 mt-60 md:mt-0">
             <Titulo titulo={props.titulo} subtitulo={props.subtitulo} />
             <div className={`
                 pt-5 border-t-2

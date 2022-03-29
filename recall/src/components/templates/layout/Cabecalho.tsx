@@ -8,8 +8,8 @@ export default function Cabecalho() {
 
     return (
         <header className={`
-            flex items-center bg-cyan-500 h-20 p-5
-            dark:bg-cyan-900 
+            fixed md:static flex items-center bg-cyan-500 h-20 p-5
+            dark:bg-cyan-900 w-full
         `}>
             <Logo className="h-8 w-8 select-none" />
             <h1 className="text-white text-3xl font-bold">Recall</h1>

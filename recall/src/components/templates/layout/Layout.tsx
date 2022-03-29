@@ -23,7 +23,7 @@ export default function Layout(props: LayoutProps) {
             <div className={`${tema} flex h-screen`}>
                 <Menu />
                 <div className={`
-                    flex flex-col w-full ml-20
+                    flex flex-col w-full md:ml-20
                     bg-gray-100 dark:bg-gray-700
                 `}>
                     <Cabecalho />
